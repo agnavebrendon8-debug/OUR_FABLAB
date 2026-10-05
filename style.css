@@ -1,0 +1,156 @@
+html, body {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    box-sizing: border-box;
+    background:rgba(5, 5, 10 , 0.02) ;
+    backdrop-filter: blur(0px);
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255 , 255, 0.0);
+}
+.Rendering_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 1;
+}
+
+.logo { color: #ffffff; font-size: 22px; font-weight: 700; }
+.logo span { color: #ff0000; }
+.nav-links a { color: rgba(255, 255, 255, 0.6); text-decoration:none; margin-left: 20px; }
+.nav-links a.active { color: #ffffff; }
+
+
+/* Conteneur principal centré */
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    z-index: 10; /* S'assure d'être devant le canvas */
+    /* pointer-events: ; */
+    pointer-events: none; /* Laisse passer les clics de souris vers la 3D si on clique à côté du formulaire*/
+}
+
+/* Boîte de connexion style "Glassmorphism" */
+.login-form {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(1px); /* Floute le fond 3D derrière la boîte */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(77, 74, 74, 0.034);
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+    color: white;
+    /* pointer-events : auto; Réactive les clics sur le formulaire lui-même */
+    pointer-events : auto;
+    box-sizing: border-box;
+}
+
+.login-form h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff0000; /* Assorti à votre cube rouge ! */
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.subscribe-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.subscribe-btn:hover {
+    background: #cc0000;
+}
+
+.login-url {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+.msgError {
+    color: #d80c0c;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    display: block;
+    margin-top: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}

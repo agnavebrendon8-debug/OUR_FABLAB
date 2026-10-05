@@ -1,0 +1,23 @@
+{
+  "name": "Page_connexion",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.js",
+    "dev:all": "concurrently \"npm run dev \" \"npm run server\"",
+    "build": "vite build",
+    "preview": "vite preview "
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1",
+    "three": "^0.186.1",
+    "vite": "^8.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Première page de connexion de la JBR">
+    <title>Page de Connexion</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <!-- Le canvas est placé en premier -->
+    <canvas class="Rendering_canvas"> </canvas>
+
+    <!-- Structure optionnelle pour votre futur formulaire de connexion -->
+        
+    <header class="main-header">
+        <div class="logo">
+            <H2>FabLab</H2>
+            <!-- <span></span> -->
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Accueil</a>
+            <a href="#experience">Expérience</a>
+            <a href="#about">À Propos</a>
+            <a href="#" class="btn-contact">Connexion</a>
+        </nav>
+    
+    </header>
+    <main class="login-container">
+
+        <!-- Votre formulaire viendra ici -->
+         <form class="login-form" action="/inscription" method="post" >
+            <h2>  S'inscrire  </h2>
+
+            <div class="input-group" >
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+            </div>
+            <div class="input-group"> 
+                <label for="password">Password</label >
+                <input id="password" type="password" name="password" required placeholder="••••••••" >
+            </div>
+            <div class="input-group">
+                <label for="verification"> Pass</label>
+                <input id="verification" name="verification" type="password" required placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="subscribe-btn"> S'inscrire </button>
+            
+            <span class="msgError"></span>
+            <label for="login-url"> Vous avez deja un compte ?</label>
+            
+            <a href="#" class="login-url"> Login </a>
+
+        </form>
+    </main>
+
+    <!-- Le script est chargé en dernier ou avec l'attribut defer/module -->
+    <script type="module" src="/src/js/script_sec.js"></script>
+
+</body>
+</html>
+
+
