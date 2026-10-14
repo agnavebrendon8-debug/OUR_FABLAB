@@ -1,0 +1,267 @@
+/* =========================================================
+INTERFACE CONNEXION ASYMÉTRIQUE - FORMULAIRE À GAUCHE
+========================================================= */
+
+html, body {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    /* Dégradé radial simulant un éclairage studio blanc/gris clair en arrière-plan */
+    background: radial-gradient(circle at center, #ffffff 0%, #eef4f6 100%);
+    color: var(--text-dark);
+}
+
+/* --- HÉDITO / BARRE DE NAVIGATION --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 6%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.logo h2 { 
+    color: var(--blue-dark); 
+    font-size: 26px; 
+    font-weight: 800; 
+}
+
+.nav-links a { 
+    color: #68747c; 
+    text-decoration: none; 
+    margin-left: 30px; 
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a.active, .nav-links a:hover { 
+    color: var(--orange); 
+}
+
+.btn-contact {
+    padding: 10px 22px;
+    border: 1px solid var(--orange);
+    border-radius: 30px;
+    color: var(--white) !important;
+    background-color: var(--orange);
+    font-weight: 700;
+}
+
+/* --- CANVAS 3D (ARRIÈRE-PLAN COMPLET) --- */
+.Rendering_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 1;
+}
+
+/* --- CONTENEUR DE POSITIONNEMENT (DÉCALÉ À GAUCHE) --- */
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligne le contenu au début (à gauche) */
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 10%; /* Crée un espace élégant entre le bord de l'écran et le formulaire */
+    box-sizing: border-box;
+    z-index: 10; 
+    pointer-events: none; /* Laisse passer la souris pour faire onduler ta grille 3D partout ailleurs */
+}
+
+/* --- TON BLOC FORMULAIRE STYLE "GLASSMORPHISM" --- */
+.wrapper {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.82); /* Blanc cristallin translucide */
+    backdrop-filter: blur(15px); /* Floute l'animation de fond de façon très esthétique */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--text-dark);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    pointer-events: auto; /* Réactive les contrôles et les saisies clavier */
+    box-sizing: border-box;
+    
+}
+
+.wrapper h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--blue-dark);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Boîtes de saisie d'origine */
+.wrapper .input-box {
+    position: relative;
+    width: 85%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: #f5f7f8; /* Gris clair officiel de leur site */
+    border: 1px solid #cbd5e1;
+    outline: none;
+    border-radius: 40px;
+    padding: 0 40px 0 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+/* L'input s'illumine à l'orange FireBlize au clic */
+.input-box input:focus {
+    border-color: var(--orange);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(232, 168, 5, 0.15);
+}
+
+.input-box input::placeholder {
+    color: #94a3b8;
+}
+
+/* Icônes boxicons intégrées d'origine */
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #68747c;
+}
+
+/* Se souvenir de moi / Mot de passe oublié */
+.wrapper .remenber-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #68747c;
+    margin: 15px 0 25px;
+}
+
+.remenber-forgot label input {
+    accent-color: var(--orange);
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.remenber-forgot a {
+    color: var(--orange);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.remenber-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Ton bouton passe du violet vers leur orange de marque dynamique */
+.wrapper .btn {
+    width: 100%;
+    height: 48px;
+    background: var(--orange);
+    color: var(--black);
+    border: 1px solid var(--orange);
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px rgba(232, 168, 5, 0.15);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.wrapper .btn:hover {
+    background: var(--orange-light);
+    border-color: var(--orange-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 168, 5, 0.25);
+}
+
+/* Lien d'inscription bas de carte */
+.wrapper .signup-link {
+    font-size: 14px;
+    text-align: center;
+    color: #68747c;
+    margin: 20px 0 0;
+}
+
+.signup-link p a {
+    color: var(--orange);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.signup-link p a:hover {
+    text-decoration: underline;
+}
+
+/* --- FOOTER FIXE SUPERPOSÉ --- */
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.footer-brand { font-size: 12px; font-weight: 700; color: var(--blue-dark); }
+.footer-status { font-size: 11px; font-weight: 600; color: #68747c; text-transform: uppercase; letter-spacing: 1px; }
+
+
+/* --- RESPONSIVE MOBILE : RE-CENTRAGE DU FORMULAIRE --- */
+@media (max-width: 768px) {
+    .login-container {
+        justify-content: center; /* On recentre sur les petits écrans de téléphones */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .wrapper {
+        max-width: 100%;
+    }
+}
