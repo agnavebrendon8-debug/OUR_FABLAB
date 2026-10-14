@@ -1,1 +1,78 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Première page de connexion de la JBR">
+    <title>Page de Connexion</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Accueil-page/accueil-style.css">
+</head>
+<body>
+
+    
+    <!-- Le canvas est placé en premier -->
+    <canvas class="Rendering_canvas"> </canvas>
+
+    <!-- Structure optionnelle pour votre futur formulaire de connexion -->
+        
+    <header class="main-header">
+        <div class="logo">
+            <H2>FabLab</H2>
+            <!-- <span></span> -->
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Accueil</a>
+            <a href="#experience">Expérience</a>
+            <a href="#about">À Propos</a>
+            <a href="../connection-page/connect-page.html" class="btn-contact">Connexion</a>
+        </nav>
+    
+    </header>
+    <main class="login-container">
+
+        <!-- Votre formulaire viendra ici -->
+         <form class="login-form" action="../connection-page/connect-page.html" method="post" >
+            <h2>  S'inscrire  </h2>
+
+            <div class="input-group" >
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+            </div>
+            <div class="input-group"> 
+                <label for="password">Password</label >
+                <input id="password" type="password" name="password" required placeholder="••••••••" >
+            </div>
+            <div class="input-group">
+                <label for="verification"> Pass</label>
+                <input id="verification" name="verification" type="password" required placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="subscribe-btn"> S'inscrire </button>
+            
+            <span class="msgError"></span>
+            <label for="login-url"> Vous avez deja un compte ?</label>
+            
+            <a href="../connection-page/connect-page.html" class="login-url"> Login </a>
+
+        </form>
+    </main>
+        <!-- ... Reste de ton code (main, formulaire, etc.) ... -->
+
+    <!-- AJOUT DU FOOTER FIXE SUPERPOSÉ -->
+    <footer class="main-footer">
+        <div class="footer-brand">© 2026 FireBlize</div>
+        <div class="footer-status">Fabriquer • Apprendre • Innover</div>
+    </footer>
+
+    <!-- Les scripts de chargement de Three.js et tes modules -->
+    <script src="https://cloudflare.com"></script>
+    <script src="https://jsdelivr.net"></script>
+    <script type="module" src="/inscription-page/script_sec.js"></script>
+
+</body>
+</html>
+
+

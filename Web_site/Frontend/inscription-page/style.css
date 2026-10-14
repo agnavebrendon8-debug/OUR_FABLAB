@@ -1,0 +1,275 @@
+/* =========================================================
+TON CSS STRUCTUREL - INTERFACE SUPERPOSÉE MODE CLAIR
+========================================================= */
+
+html, body {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    /* Remplacement du fond sombre par un environnement de studio blanc éclairé en dégradé radial */
+    background: radial-gradient(circle at center, #ffffff 0%, #eef4f6 100%);
+    color: var(--text-dark);
+}
+
+/* --- HÉDITO / BARRE DE NAVIGATION --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: px 6%;
+    box-sizing: border-box;
+    background: rgba(236, 241, 241, 0.411); /* Translucide clair */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000; /* Priorité maximale à l'affichage */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.logo h2 { 
+    color: var(--blue-dark); 
+    font-size: 23px; 
+    font-weight: 800; 
+}
+
+.nav-links a { 
+    color: #68747c; 
+    text-decoration: none; 
+    margin-left: 30px; 
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a.active, .nav-links a:hover { 
+    color: var(--orange); 
+}
+
+.btn-contact {
+    padding: 10px 22px;
+    border: 1px solid var(--orange);
+    border-radius: 30px;
+    color: var(--white) !important;
+    background-color: var(--orange);
+    font-weight: 700;
+}
+
+.btn-contact:hover {
+    background-color: var(--orange-light);
+    border-color: var(--orange-light);
+    transform: translateY(-2px);
+}
+
+/* --- CANVAS 3D (ARRIÈRE-PLAN) --- */
+.Rendering_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 1; /* Reste sagement derrière le formulaire */
+}
+
+/* --- CONTENEUR FORMULAIRE SUPERPOSÉ --- */
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    box-sizing: border-box;
+    z-index: 10; 
+    pointer-events: none; /* TRÈS IMPORTANT : Permet à la souris de manipuler la 3D à côté de la boîte */
+}
+
+/* La boîte de formulaire style "Glassmorphism Clair" */
+.login-form {
+    background: rgba(255, 255, 255, 0.82); /* Fond blanc cristallin semi-transparent */
+    backdrop-filter: blur(15px); /* Magnifique effet de flou quand la sphère passe derrière */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); /* Ombre douce et légère */
+    color: var(--text-dark);
+    pointer-events: auto; /* Réactive les clics sur les boutons et les inputs */
+    box-sizing: border-box;
+}
+
+.login-form h2 {
+    margin-top: 0;
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--blue-dark);
+}
+
+/* --- ENTRÉES ET INPUTS --- */
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #68747c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 18px;
+    box-sizing: border-box;
+    border-radius: 30px; /* Bords parfaitement arrondis en accord avec leur design */
+    border: 1px solid #cbd5e1;
+    background: #f5f7f8;
+    color: var(--text-dark);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Effet focus : Passe à l'orange emblématique de FireBlize au clic */
+.input-group input:focus {
+    border-color: var(--orange);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(232, 168, 5, 0.15);
+}
+
+/* --- BOUTON D'ACTION PRINCIPAL --- */
+.subscribe-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--orange); /* Transition du rouge vers leur orange officiel */
+    color: var(--black);
+    box-sizing: border-box;
+    /* border: 1px solid var(--orange); */
+    border-radius: 30px ;
+    border-color: rgba(136, 209, 219, 0.411);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.subscribe-btn:hover {
+    background: var(--orange-light);
+    border-color: var(--orange-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 168, 5, 0.2);
+}
+
+/* --- LIENS ET ERREURS --- */
+.login-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #68747c;
+}
+
+.login-footer-text .login-url {
+    display: inline-block;
+    color: var(--orange);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login-url:hover {
+    text-decoration: underline;
+}
+
+.msgError {
+    color: #d80c0c;
+    font-size: 13px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Petit effet de secousse si erreur de mot de passe */
+.shake-animation {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+
+/* --- FOOTER FIXE SUPERPOSÉ (MODE CLAIR) --- */
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6); /* Translucide clair comme le header */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000; /* Même niveau de priorité que le header */
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    pointer-events: none; /* Laisse passer la souris vers la sphère 3D */
+}
+
+.footer-brand {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    letter-spacing: 0.5px;
+}
+
+.footer-status {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7e8e99;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ajustement pour que le formulaire ne vienne pas chevaucher le footer sur les petits écrans */
+@media (max-height: 650px) {
+    .login-container {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+    .login-form {
+        padding: 25px 30px;
+        max-width: 340px;
+    }
+    .login-form h2 {
+        margin-bottom: 18px;
+    }
+}
