@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page de connexion officielle de FireBlize">
+    <title>FireBlize - Connexion</title>
+    
+    <!-- Liens de styles : Le style global, le tien, les polices et Boxicons -->
+    <link rel="stylesheet" href="../Accueil-page/accueil-style.css">
+    <link rel="stylesheet" href="../inscription-page/style.css">
+    <link rel="stylesheet" href="connect-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Le canvas Three.js pour accueillir ton animation de vagues ou de grille technologique -->
+    <canvas class="Rendering_canvas"></canvas>
+        
+    <!-- Barre de navigation fixe (cohérente avec le projet) -->
+    <header class="main-header">
+        <div class="logo">
+            <h2>FireBlize</h2>
+        </div>
+        <nav class="nav-links">
+            <a href="../Accueil-page/index.html#accueil">Accueil</a>
+            <a href="../Accueil-page/index.html#fablab">FabLab</a>
+            <a href="../Accueil-page/index.html#activites">Activités</a>
+            <a href="../Accueil-page/index.html#projets">Projets</a>
+            <a href="../inscription-page/index.html">S'inscrire</a>
+            <a href="../connection-page/connect-page.html" class="active btn-contact">Connexion</a>
+        </nav>
+    </header>
+
+    <!-- Conteneur principal superposé (laisse passer les événements souris vers le canvas 3D) -->
+    <main class="login-container">
+        <div class="wrapper">
+            <h1>Login</h1>
+            <form action="../Accueil-page/index.html" method="post">
+                
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="remenber-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="signup-link">
+                    <p>Don't have an account ? <a href="inscription.html">Sign up</a></p>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Pied de page fixe superposé discret -->
+    <footer class="main-footer">
+        <div class="footer-brand">© 2026 FireBlize</div>
+        <div class="footer-status">Fabriquer • Apprendre • Innover</div>
+    </footer>
+
+    <!-- Scripts techniques de rendu et point d'entrée JavaScript -->
+    <script src="https://cloudflare.com"></script>
+    <script type="module" src="../src/js/connect-fonction.js" ></script>
+
+</body>
+</html>
